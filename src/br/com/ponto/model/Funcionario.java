@@ -2,10 +2,12 @@ package br.com.ponto.model;
 
 import java.util.Date;
 
-public class Funcionarios {
+public class Funcionario {
     private int id;
     private String nome;
+    private Date dataNascimento;
     private String cargo;
+    private String setor;
     private Date dataAdmissao;
     private String status;
 
@@ -25,12 +27,28 @@ public class Funcionarios {
         this.nome = nome;
     }
 
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
     public String getCargo() {
         return cargo;
     }
 
     public void setCargo(String cargo) {
         this.cargo = cargo;
+    }
+
+    public String getSetor() {
+        return setor;
+    }
+
+    public void setSetor(String setor) {
+        this.setor = setor;
     }
 
     public Date getDataAdmissao() {
