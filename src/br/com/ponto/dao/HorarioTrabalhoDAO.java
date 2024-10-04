@@ -1,16 +1,15 @@
 package br.com.ponto.dao;
 
 import br.com.ponto.factory.ConnectionFactory;
-import br.com.ponto.model.Funcionario;
+import br.com.ponto.model.HorarioTrabalho;
 import com.mysql.jdbc.PreparedStatement;
 
 import java.sql.Connection;
 
-public class FuncionarioDAO {
+public class HorarioTrabalhoDAO {
+    public void save(HorarioTrabalho HorarioTrabalho) throws Exception {
 
-    public void save(Funcionario funcionario) throws Exception {
-
-        String sql = "INSERT INTO funcionarios(nome, dataNascimento, cargo, setor, dataAdmissao) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO horario_trabalho(diaSemana, horarioEntrada, horarioSaida, intervalo) VALUES (?, ?, ?, ?)";
 
         Connection conn = null;
         PreparedStatement pstm = null;
@@ -23,7 +22,7 @@ public class FuncionarioDAO {
             pstm = (PreparedStatement) conn.prepareStatement(sql);
 
             //Valores esperados pela query
-            pstm.setString(1, funcionario.getNome());
+            pstm.setString(1, HorarioTrabalho.getNome());
             pstm.setDate(2, new java.sql.Date(funcionario.getDataNascimento().getTime()));
             pstm.setString(3, funcionario.getCargo());
             pstm.setString(4, funcionario.getSetor());
@@ -47,9 +46,10 @@ public class FuncionarioDAO {
                 if (conn != null) {
                     conn.close();
                 }
-            } catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-    }
+        }
     }
 }
+

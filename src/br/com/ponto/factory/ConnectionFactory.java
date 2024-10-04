@@ -6,8 +6,8 @@ import java.sql.DriverManager;
 public class ConnectionFactory {
 
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "";
-    private static final String DATABASE_URL = "jdbc:mysql://localhost:3307/pontual24h";
+    private static final String PASSWORD = "147147";
+    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/pontual24h?useSSL=false&serverTimezone=UTC";
 
     // Conexão com o banco de dados
     public static Connection createConnectionToMySQL() throws  Exception{
