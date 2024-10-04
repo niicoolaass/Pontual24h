@@ -8,9 +8,9 @@ import java.sql.Connection;
 
 public class HorarioTrabalhoDAO {
     //C: CREATE
-    public void save(HorarioTrabalho HorarioTrabalho) throws Exception {
+    public static void save(HorarioTrabalho HorarioTrabalho) throws Exception {
 
-        String sql = "INSERT INTO horario_trabalho(diaSemana, horarioEntrada, horarioSaida, intervalo) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO horario_trabalho(diasSemana, horarioEntrada, horarioSaida, intervalo) VALUES (?, ?, ?, ?)";
 
         Connection conn = null;
         PreparedStatement pstm = null;
@@ -26,7 +26,7 @@ public class HorarioTrabalhoDAO {
             pstm.setString(1, HorarioTrabalho.getDiasSemana());
             pstm.setTime(2, HorarioTrabalho.getHorarioEntrada());
             pstm.setTime(3, HorarioTrabalho.getHorarioSaida());
-            pstm.setTime(5, HorarioTrabalho.getIntervalo());
+            pstm.setTime(4, HorarioTrabalho.getIntervalo());
 
             //Executar a query
             pstm.execute();
