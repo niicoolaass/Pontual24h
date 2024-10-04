@@ -1,16 +1,18 @@
 package br.com.ponto.dao;
 
 import br.com.ponto.factory.ConnectionFactory;
-import br.com.ponto.model.HorarioTrabalho;
+import br.com.ponto.model.RegistroPonto;
 import com.mysql.jdbc.PreparedStatement;
 
 import java.sql.Connection;
+import java.sql.Date;
+import java.sql.Time;
 
-public class HorarioTrabalhoDAO {
+public class RegistroPontoDAO {
     //C: CREATE
-    public void save(HorarioTrabalho HorarioTrabalho) throws Exception {
+    public void save(RegistroPonto registroPonto) throws Exception {
 
-        String sql = "INSERT INTO horario_trabalho(diaSemana, horarioEntrada, horarioSaida, intervalo) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO registro_ponto(id_funcionario, data, hora, tipoRegistro) VALUES (?, ?, ?, ?)";
 
         Connection conn = null;
         PreparedStatement pstm = null;
@@ -23,15 +25,15 @@ public class HorarioTrabalhoDAO {
             pstm = (PreparedStatement) conn.prepareStatement(sql);
 
             //Valores esperados pela query
-            pstm.setString(1, HorarioTrabalho.getDiasSemana());
-            pstm.setTime(2, HorarioTrabalho.getHorarioEntrada());
-            pstm.setTime(3, HorarioTrabalho.getHorarioSaida());
-            pstm.setTime(5, HorarioTrabalho.getIntervalo());
+            pstm.setInt(1, registroPonto.getIdFuncionario());
+            pstm.setDate(2, new Date(registroPonto.getData().getTime()));
+            pstm.setTime(3, new Time(registroPonto.getHora().getTime()));
+            pstm.setString(4, registroPonto.getTipoRegistro());
 
             //Executar a query
             pstm.execute();
 
-            System.out.println("Horário de trabalho salvo com sucesso!");
+            System.out.println("Registro de ponto salvo com sucesso!");
         } catch (Exception e) {
             e.printStackTrace();
 

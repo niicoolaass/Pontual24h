@@ -10,6 +10,7 @@ public class Funcionario {
     private String setor;
     private Date dataAdmissao;
     private String status;
+    private int horarioTrabalho;
 
     public int getId() {
         return id;
@@ -65,5 +66,13 @@ public class Funcionario {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public int getHorarioTrabalho() {
+        return horarioTrabalho;
+    }
+
+    public void setHorarioTrabalho(int horarioTrabalho) {
+        this.horarioTrabalho = horarioTrabalho;
     }
 }

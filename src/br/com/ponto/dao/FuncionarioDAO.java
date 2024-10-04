@@ -7,10 +7,10 @@ import com.mysql.jdbc.PreparedStatement;
 import java.sql.Connection;
 
 public class FuncionarioDAO {
-
+    //C: CREATE
     public void save(Funcionario funcionario) throws Exception {
 
-        String sql = "INSERT INTO funcionarios(nome, dataNascimento, cargo, setor, dataAdmissao) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO funcionarios(nome, dataNascimento, cargo, setor, dataAdmissao, id_horarioTrabalho) VALUES (?, ?, ?, ?, ?, ?)";
 
         Connection conn = null;
         PreparedStatement pstm = null;
@@ -28,6 +28,8 @@ public class FuncionarioDAO {
             pstm.setString(3, funcionario.getCargo());
             pstm.setString(4, funcionario.getSetor());
             pstm.setDate(5, new java.sql.Date(funcionario.getDataAdmissao().getTime()));
+            pstm.setInt(6, funcionario.getHorarioTrabalho());
+
 
             //Executar a query
             pstm.execute();

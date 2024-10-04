@@ -20,10 +20,11 @@ CREATE TABLE funcionarios (
     FOREIGN KEY (id_horarioTrabalho) REFERENCES horario_trabalho(id)
 );
 
-CREATE TABLE Registro_Ponto (
+CREATE TABLE registro_ponto (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_funcionario INT,
-    dataHora DATETIME,
+    data DATE,
+    hora TIME,
     tipoRegistro ENUM('Entrada', 'Saída'),
     FOREIGN KEY (id_funcionario) REFERENCES Funcionarios(id)
 );
