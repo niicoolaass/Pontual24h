@@ -59,7 +59,6 @@ public class FuncionarioDAO {
     }
 
     //R: READ - SELECT
-
     public List<Funcionario> getFuncionarios() {
 
         String sql = "Select + FROM funcionarios";
