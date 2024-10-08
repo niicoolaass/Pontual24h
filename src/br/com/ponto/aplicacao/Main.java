@@ -14,6 +14,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //Criar os registros
+
 //        HorarioTrabalhoDAO horarioTrabalhoDAO = new HorarioTrabalhoDAO();
 //
 //        HorarioTrabalho horarioTrabalho = new HorarioTrabalho();
@@ -31,11 +33,11 @@ public class Main {
 //        FuncionarioDAO funcionarioDao = new FuncionarioDAO();
 //
 //        Funcionario funcionario = new Funcionario();
-//        funcionario.setNome("Nicolas vieira");
-//        funcionario.setDataNascimento(java.sql.Date.valueOf("2004-04-16"));
-//        funcionario.setCargo("Fiscal de perdas");
-//        funcionario.setSetor("Segurança do trabalho");
-//        funcionario.setDataAdmissao(java.sql.Date.valueOf("2023-10-08"));
+//        funcionario.setNome("João vitor");
+//        funcionario.setDataNascimento(java.sql.Date.valueOf("2002-10-06"));
+//        funcionario.setCargo("Auxiliar");
+//        funcionario.setSetor("Financeiro");
+//        funcionario.setDataAdmissao(java.sql.Date.valueOf("2020-08-10"));
 //        funcionario.setHorarioTrabalho(1);
 //
 //        try {
@@ -57,5 +59,25 @@ public class Main {
 //        } catch (Exception e) {
 //            throw new RuntimeException(e);
 //        }
+
+        //Visualização dos registros do banco de dados
+
+//        for(Funcionario f : FuncionarioDAO.getFuncionarios()) {
+//            System.out.println("Funcionarios: " + f.getNome());
+//        }
+
+        //Atualizar
+
+//        Funcionario f1 = new Funcionario();
+//
+//        f1.setNome("Nicolas vieira dos santos");
+//        f1.setDataNascimento(java.sql.Date.valueOf("2004-04-16"));
+//        f1.setCargo("Fiscal de perdas");
+//        f1.setSetor("Segurança do trabalho");
+//        f1.setDataAdmissao(java.sql.Date.valueOf("2023-10-08"));
+//        f1.setHorarioTrabalho(1);
+//        f1.setId(3);
+//
+//        FuncionarioDAO.update(f1);
     }
 }

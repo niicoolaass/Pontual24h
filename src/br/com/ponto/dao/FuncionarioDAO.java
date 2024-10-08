@@ -5,7 +5,9 @@ import br.com.ponto.model.Funcionario;
 import com.mysql.jdbc.PreparedStatement;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,9 +61,9 @@ public class FuncionarioDAO {
     }
 
     //R: READ - SELECT
-    public List<Funcionario> getFuncionarios() {
+    public static List<Funcionario> getFuncionarios() {
 
-        String sql = "Select + FROM funcionarios";
+        String sql = "Select * FROM funcionarios";
 
         List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 
@@ -85,19 +87,19 @@ public class FuncionarioDAO {
                 //id
                 funcionario.setId(rset.getInt("id"));
                 //nome
-                funcionario.setNome(rset.getString("Nome"));
+                funcionario.setNome(rset.getString("nome"));
                 //data de nascimento
-                funcionario.setDataNascimento(rset.getDate("Data de nascimento"));
+                funcionario.setDataNascimento(rset.getDate("dataNascimento"));
                 //cargo
-                funcionario.setCargo(rset.getString("Cargo"));
+                funcionario.setCargo(rset.getString("cargo"));
                 //setor
-                funcionario.setSetor(rset.getString("Setor"));
+                funcionario.setSetor(rset.getString("setor"));
                 //data de admissao
-                funcionario.setDataAdmissao(rset.getDate("Data de admissao"));
+                funcionario.setDataAdmissao(rset.getDate("dataAdmissao"));
                 //id horario de trabalho
-                funcionario.setHorarioTrabalho(rset.getInt("Horario de trabalho"));
+                funcionario.setHorarioTrabalho(rset.getInt("id_horarioTrabalho"));
                 //status
-                funcionario.setStatus(rset.getString("Status"));
+                funcionario.setStatus(rset.getString("status"));
 
                 funcionarios.add(funcionario);
 
@@ -126,6 +128,55 @@ public class FuncionarioDAO {
         }
 
         return funcionarios;
+    }
+
+    //U: UPDATE - SET
+    public static void update(Funcionario funcionario) {
+        String sql = "UPDATE funcionarios SET nome = ?, dataNascimento = ?, cargo = ?, setor = ?, dataAdmissao = ?, id_horarioTrabalho = ? " +
+        "WHERE id = ?";
+
+        Connection conn = null;
+        PreparedStatement pstm = null;
+
+        try {
+            //Criar conexao com o banco
+            conn = ConnectionFactory.createConnectionToMySQL();
+
+            //Criar a classe para executar a query
+            pstm = (PreparedStatement) conn.prepareStatement(sql);
+
+            //Adicionar os valores para atualizar
+
+            pstm.setString(1, funcionario.getNome());
+            pstm.setDate(2, (Date) funcionario.getDataNascimento());
+            pstm.setString(3, funcionario.getCargo());
+            pstm.setString(4, funcionario.getSetor());
+            pstm.setDate(5, (Date) funcionario.getDataAdmissao());
+            pstm.setInt(6, funcionario.getHorarioTrabalho());
+
+            //Qual o ID do contato que deseja atualizar?
+            pstm.setInt(7, funcionario.getId());
+
+            //Exxecutar a query
+            pstm.execute();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        } finally {
+            try {
+                if(pstm!=null) {
+                    pstm.close();
+                }
+
+                if(conn!=null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
 
