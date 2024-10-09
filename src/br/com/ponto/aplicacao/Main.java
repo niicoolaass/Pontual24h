@@ -19,9 +19,9 @@ public class Main {
 //        HorarioTrabalhoDAO horarioTrabalhoDAO = new HorarioTrabalhoDAO();
 //
 //        HorarioTrabalho horarioTrabalho = new HorarioTrabalho();
-//        horarioTrabalho.setDiasSemana("Segunda a sexta");
-//        horarioTrabalho.setHorarioEntrada(Time.valueOf("07:00:00"));
-//        horarioTrabalho.setHorarioSaida(Time.valueOf("16:30:00"));
+//        horarioTrabalho.setDiasSemana("Segunda a sabado");
+//        horarioTrabalho.setHorarioEntrada(Time.valueOf("06:00:00"));
+//        horarioTrabalho.setHorarioSaida(Time.valueOf("14:30:00"));
 //        horarioTrabalho.setIntervalo(Time.valueOf("1:00:00"));
 //
 //        try {
@@ -79,5 +79,9 @@ public class Main {
 //        f1.setId(3);
 //
 //        FuncionarioDAO.update(f1);
+
+        //Deletar
+
+//        FuncionarioDAO.deleteByID(3);
     }
 }

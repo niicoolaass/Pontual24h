@@ -40,6 +40,7 @@ public class FuncionarioDAO {
             pstm.execute();
 
             System.out.println("Funcionario salvo com sucesso!");
+
         } catch (Exception e) {
             e.printStackTrace();
 
@@ -160,6 +161,7 @@ public class FuncionarioDAO {
             //Exxecutar a query
             pstm.execute();
 
+            System.out.println("Atualizado com sucesso!");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -171,6 +173,43 @@ public class FuncionarioDAO {
                 }
 
                 if(conn!=null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    //D: DELETE - DELET
+
+    public static void deleteByID(int id) {
+        String sql = "DELETE FROM funcionarios WHERE id = ?";
+
+        Connection conn = null;
+
+        PreparedStatement pstm = null;
+
+        try {
+            conn = ConnectionFactory.createConnectionToMySQL();
+
+            pstm = (PreparedStatement) conn.prepareStatement(sql);
+
+            pstm.setInt(1, id);
+
+            pstm.execute();
+
+            System.out.println("Deletado com sucesso!");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(pstm != null) {
+                    pstm.close();
+                }
+
+                if(conn != null) {
                     conn.close();
                 }
             } catch (Exception e) {
