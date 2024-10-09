@@ -181,7 +181,7 @@ public class FuncionarioDAO {
         }
     }
 
-    //D: DELETE - DELET
+    //D: DELETE - DELETE
 
     public static void deleteByID(int id) {
         String sql = "DELETE FROM funcionarios WHERE id = ?";
