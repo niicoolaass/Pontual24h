@@ -7,14 +7,14 @@ import br.com.ponto.model.Funcionario;
 import br.com.ponto.model.HorarioTrabalho;
 import br.com.ponto.model.RegistroPonto;
 
+import java.sql.Date;
 import java.sql.Time;
-import java.util.Date;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        //Criar os registros
+        //CRIAR OS REGISTROS
 
 //        HorarioTrabalhoDAO horarioTrabalhoDAO = new HorarioTrabalhoDAO();
 //
@@ -46,6 +46,7 @@ public class Main {
 //            throw new RuntimeException(e);
 //        }
 
+
 //        RegistroPontoDAO registroPontoDAO = new RegistroPontoDAO();
 //        Date agora = new Date();
 //        RegistroPonto registroPonto = new RegistroPonto();
@@ -60,13 +61,23 @@ public class Main {
 //            throw new RuntimeException(e);
 //        }
 
-        //Visualização dos registros do banco de dados
+        //VISUALIZAÇÃO DOS DADOS
 
 //        for(Funcionario f : FuncionarioDAO.getFuncionarios()) {
 //            System.out.println("Funcionarios: " + f.getNome());
 //        }
 
-        //Atualizar
+
+//        for(HorarioTrabalho f : HorarioTrabalhoDAO.getHorarioTrabalho()) {
+//            System.out.println("Horário de trabalho: " + f.getHorarioEntrada());
+//        }
+
+
+//          for(RegistroPonto f : RegistroPontoDAO.getRegistroPonto()) {
+//              System.out.println("Registro de ponto: " + f.getIdFuncionario());
+//          }
+
+        //ATUALIZAR
 
 //        Funcionario f1 = new Funcionario();
 //
@@ -80,8 +91,36 @@ public class Main {
 //
 //        FuncionarioDAO.update(f1);
 
-        //Deletar
 
-//        FuncionarioDAO.deleteByID(3);
+//        HorarioTrabalho h1 = new HorarioTrabalho();
+//
+//        h1.setDiasSemana ("segunda a sexta");
+//        h1.setHorarioEntrada(java.sql.Time.valueOf("07:00:00"));
+//        h1.setHorarioSaida(java.sql.Time.valueOf("16:30:00"));
+//        h1.setIntervalo(java.sql.Time.valueOf("01:00:00"));
+//        h1.setId(1);
+//
+//        HorarioTrabalhoDAO.update(h1);
+
+
+//        RegistroPonto r1 = new RegistroPonto();
+//
+//        r1.setIdFuncionario (3);
+//        r1.setData(java.sql.Date.valueOf("2024-08-10"));
+//        r1.setHora(java.sql.Time.valueOf("01:00:00"));
+//        r1.setTipoRegistro("Entrada");
+//        r1.setId(2);
+//
+//        RegistroPontoDAO.update(r1);
+
+        //DELETAR
+
+//        FuncionarioDAO.deleteByID(7);
+
+
+//        HorarioTrabalhoDAO.deleteByID(1);
+
+
+
     }
 }

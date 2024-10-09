@@ -155,7 +155,7 @@ public class FuncionarioDAO {
             pstm.setDate(5, (Date) funcionario.getDataAdmissao());
             pstm.setInt(6, funcionario.getHorarioTrabalho());
 
-            //Qual o ID do contato que deseja atualizar?
+            //Qual o ID do funcionario que deseja atualizar?
             pstm.setInt(7, funcionario.getId());
 
             //Exxecutar a query
@@ -182,7 +182,6 @@ public class FuncionarioDAO {
     }
 
     //D: DELETE - DELETE
-
     public static void deleteByID(int id) {
         String sql = "DELETE FROM funcionarios WHERE id = ?";
 

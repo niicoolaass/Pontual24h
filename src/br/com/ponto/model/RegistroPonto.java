@@ -4,25 +4,26 @@ import java.sql.Time;
 import java.util.Date;
 
 public class RegistroPonto {
+    private int id;
     private int idFuncionario;
-    Date data;
-    Time hora;
-    String tipoRegistro; //Entrada ou Saida
+    private Date data;
+    private Time hora;
+    private String tipoRegistro; //Entrada ou Saida
 
-    public int getIdFuncionario() {
-        return idFuncionario;
+    public int getId() {
+        return id;
     }
 
-    public void setIdFuncionario(int idFuncionario) {
-        this.idFuncionario = idFuncionario;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Date getData() {
-        return data;
+    public String getTipoRegistro() {
+        return tipoRegistro;
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public void setTipoRegistro(String tipoRegistro) {
+        this.tipoRegistro = tipoRegistro;
     }
 
     public Time getHora() {
@@ -33,11 +34,19 @@ public class RegistroPonto {
         this.hora = hora;
     }
 
-    public String getTipoRegistro() {
-        return tipoRegistro;
+    public Date getData() {
+        return data;
     }
 
-    public void setTipoRegistro(String tipoRegistro) {
-        this.tipoRegistro = tipoRegistro;
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public int getIdFuncionario() {
+        return idFuncionario;
+    }
+
+    public void setIdFuncionario(int idFuncionario) {
+        this.idFuncionario = idFuncionario;
     }
 }
