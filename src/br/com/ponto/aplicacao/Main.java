@@ -121,6 +121,9 @@ public class Main {
 //        HorarioTrabalhoDAO.deleteByID(1);
 
 
+//          RegistroPontoDAO.deleteByID(3);
+
+
 
     }
 }

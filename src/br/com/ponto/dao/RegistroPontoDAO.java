@@ -171,6 +171,41 @@ public class RegistroPontoDAO {
         }
     }
 
+    //D: DELETE - DELETE
+    public static void deleteByID(int id) {
+        String sql = "DELETE FROM registro_ponto WHERE id = ?";
+
+        Connection conn = null;
+
+        PreparedStatement pstm = null;
+
+        try {
+            conn = ConnectionFactory.createConnectionToMySQL();
+
+            pstm = (PreparedStatement) conn.prepareStatement(sql);
+
+            pstm.setInt(1, id);
+
+            pstm.execute();
+
+            System.out.println("Deletado com sucesso!");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if(pstm != null) {
+                    pstm.close();
+                }
+
+                if(conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 }
 
