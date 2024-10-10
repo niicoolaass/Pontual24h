@@ -7,7 +7,7 @@ import br.com.ponto.model.Funcionario;
 import br.com.ponto.model.HorarioTrabalho;
 import br.com.ponto.model.RegistroPonto;
 
-import java.sql.Date;
+import java.util.Date;
 import java.sql.Time;
 
 public class Main {
@@ -66,19 +66,19 @@ public class Main {
 //        for(Funcionario f : FuncionarioDAO.getFuncionarios()) {
 //            System.out.println("Funcionarios: " + f.getNome());
 //        }
-
-
+//
+//
 //        for(HorarioTrabalho f : HorarioTrabalhoDAO.getHorarioTrabalho()) {
 //            System.out.println("Horário de trabalho: " + f.getHorarioEntrada());
 //        }
-
-
+//
+//
 //          for(RegistroPonto f : RegistroPontoDAO.getRegistroPonto()) {
 //              System.out.println("Registro de ponto: " + f.getIdFuncionario());
 //          }
-
-        //ATUALIZAR
-
+//
+//        ATUALIZAR
+//
 //        Funcionario f1 = new Funcionario();
 //
 //        f1.setNome("Nicolas vieira dos santos");
@@ -101,26 +101,26 @@ public class Main {
 //        h1.setId(1);
 //
 //        HorarioTrabalhoDAO.update(h1);
-
-
+//
+//
 //        RegistroPonto r1 = new RegistroPonto();
 //
 //        r1.setIdFuncionario (3);
 //        r1.setData(java.sql.Date.valueOf("2024-08-10"));
-//        r1.setHora(java.sql.Time.valueOf("01:00:00"));
-//        r1.setTipoRegistro("Entrada");
-//        r1.setId(2);
+//        r1.setHora(java.sql.Time.valueOf("05:00:00"));
+//        r1.setTipoRegistro("Saida");
+//        r1.setId(3);
 //
 //        RegistroPontoDAO.update(r1);
-
-        //DELETAR
-
+//
+//        DELETAR
+//
 //        FuncionarioDAO.deleteByID(7);
-
-
+//
+//
 //        HorarioTrabalhoDAO.deleteByID(1);
-
-
+//
+//
 //          RegistroPontoDAO.deleteByID(3);
 
 
